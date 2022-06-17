@@ -8,6 +8,17 @@
     <style>
         html,body {
             width: 100%;
+            height: 100%;
+
+            font-family: Pretendard;
+            font-size: 14px;
+            font-weight: 400;
+            line-height: 17px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        font {
+
         }
         .header {
             width: 100%;
@@ -21,6 +32,13 @@
             align-content: center;
             justify-content: center;
             align-items: center;
+
+            font-family: Pretendard;
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 19px;
+            letter-spacing: 0em;
+            text-align: center;
         }
         .header img {
             position: absolute;
@@ -28,7 +46,86 @@
             padding: 14px;
         }
         .title {
-            border: 1px solid black;
+            position: relative;
+            width: 165px;
+            height: 52px;
+            left: 16px;
+            top: 40px;
+        }
+        .title span {
+            font-family: Pretendard;
+            font-size: 20px;
+            font-weight: 700;
+            line-height: 26px;
+            letter-spacing: 0em;
+            text-align: left;
+        }
+        .sub_title {
+            position: relative;
+            width: 100%;
+            left: 18px;
+            top: 82px;
+
+            color: #8C949C;
+        }
+        .pet_list {
+            position: relative;
+            top: 65px;
+        }
+        .pet_detail {
+            position: relative;
+            margin: 16px;
+            height: 74px;
+            top: 24px;
+
+            background: #FFFFFF;
+            border: 1px solid #DFE3E8;
+            border-radius: 8px;
+        }
+        .pet_detail img {
+            position: absolute;
+            margin: 16px;
+        }
+        .pet_name {
+            position: absolute;
+            top: 19px;
+            left: 70px;
+            color: #42494F;
+        }
+        .pet_breed_name {
+            position: absolute;
+            top: 40px;
+            left: 70px;
+            color: #8C949C;
+        }
+        .continue {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            align-items: center;
+            position: relative;
+            width: 90px;
+            left: 253px;
+        }
+        .continue span {
+            position: absolute;
+            font-size: 12px;
+            color: #1482FF;
+            top: 41px;
+        }
+        .footer {
+            position: absolute;
+            left: 50%;
+            transform: translate(-50%, 0%);
+            bottom: 12px;
+        }
+        .footer button {
+            width: 343px;
+            height: 48px;
+            
+            background: #DFE3E8;
+            border-radius: 8px;
         }
     </style>
     <title>Document</title>
@@ -39,24 +136,35 @@
         <img src="./image/ic_close.svg" alt="" width="24" height="24">
     </div>
     <div class="title">
-        핏펫에 저장되어 있는 정보가 있어요
+        <span>핏펫에 저장되어 있는 정보가 있어요</span>
     </div>
-    <div>
-        이 중에 등록을 신청할 반려 동물이 있다면 선택해 주세요
+    <div class="sub_title">
+        <span>이 중에 등록을 신청할 반려 동물이 있다면 선택해 주세요</span>
     </div>
-    <ul>
-        <li>
-            <img>
+    <ul class="pet_list">
+        <li class="pet_detail">
+            <img src="./image/dog1.svg" alt="" width="42" height="42">
             <div>
-                <div>뭉뭉이</div>
-                <div>웨스트</div>
+                <div class="pet_name">뭉뭉이</div>
+                <div class="pet_breed_name">웨스트 하이랜드 화이트테리어</div>
             </div>
+            <div class="continue">
+                <img src="./image/ic_edit.svg" alt="" width="24" height="24">
+                <span>이어하기</span>
+            </div>
+        </li>
+        <li class="pet_detail">
+            <img src="./image/dog2.svg" alt="" width="42" height="42">
             <div>
-                이어하기
+                <div class="pet_name">왈왈</div>
+                <div class="pet_breed_name">웨스트 하이랜드 화이트테리어</div>
+            </div>
+            <div lass="continue">
+                
             </div>
         </li>
     </ul>
-    <div>
+    <div class="footer">
         <button>확인</button>
     </div>
     <script>
