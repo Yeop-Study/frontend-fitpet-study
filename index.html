@@ -17,9 +17,6 @@
             letter-spacing: 0em;
             text-align: left;
         }
-        font {
-
-        }
         .header {
             width: 100%;
             height: 50px;
@@ -33,7 +30,6 @@
             justify-content: center;
             align-items: center;
 
-            font-family: Pretendard;
             font-size: 16px;
             font-weight: 700;
             line-height: 19px;
@@ -53,12 +49,10 @@
             top: 40px;
         }
         .title span {
-            font-family: Pretendard;
-            font-size: 20px;
+            font-style: normal;
             font-weight: 700;
-            line-height: 26px;
-            letter-spacing: 0em;
-            text-align: left;
+            font-size: 20px;
+            line-height: 130%;
         }
         .sub_title {
             position: relative;
@@ -84,6 +78,10 @@
             background: #FFFFFF;
             border: 1px solid #DFE3E8;
             border-radius: 8px;
+        }
+        .plus_icon {
+            left: 15px;
+            top: 15px;
         }
         .pet_detail img {
             position: absolute;
@@ -114,6 +112,12 @@
             color: #1482FF;
             top: 41px;
         }
+        .new_pet_name {
+            position: absolute;
+            top: 29px;
+            left: 70px;
+            color: #8C949C;
+        }
         .footer {
             position: absolute;
             left: 50%;
@@ -126,6 +130,9 @@
             
             background: #DFE3E8;
             border-radius: 8px;
+        }
+        .footer button span {
+            color: #FFFFFF;
         }
     </style>
     <title>Document</title>
@@ -163,9 +170,19 @@
                 
             </div>
         </li>
+        <li class="pet_detail">
+            <img src="./image/Ellipse 13.svg" alt="" width="42" height="42">
+            <img class="plus_icon" src="./image/Group 3425.svg" alt="" width="12" height="12">
+            <div>
+                <div class="new_pet_name">새로 등록할래요!</div>
+            </div>
+            <div lass="continue">
+                
+            </div>
+        </li>
     </ul>
     <div class="footer">
-        <button>확인</button>
+        <button><span>확인</span></button>
     </div>
     <script>
         /**
