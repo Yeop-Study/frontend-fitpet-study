@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <style>
+        html,body {
+            width: 100%;
+            font-size: 14px;
+        }
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            width: 100vw;
+            height: 50px;
+            border-bottom: 1.5px solid #F4F7FA;
+            position: fixed;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+            justify-content: center;
+            background: #FFFFFF;
+
+            font-size: 16px;
+            font-weight: 700;
+            line-height: 19px;
+        }
+        .header img {
+            position: absolute;
+            right: 0;
+            padding: 15px 20px;
+        }
+        .content {
+            margin-top: 50px;
+        }
+        .my_info {
+            display: flex;
+            height: 98px;
+            flex-direction: row;
+            justify-content: flex-start;
+            align-items: center;
+
+            padding: 24px 20px;
+        }
+        .my_info1 {
+            flex: 1;
+            display: flex;
+            align-items: flex-start;
+
+            font-weight: 700;
+            font-size: 20px;
+            line-height: 24px;
+            flex-direction: column;
+        }
+        .my_info1 span {
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+
+            padding-left: 8px;
+        }
+        .my_info1_image {
+            display: flex;
+            align-items: center;
+
+            padding-top: 4px;
+        }
+        .term {
+            background: #F8F9FA;
+            height: 8px;
+        }
+        .list_box {
+            padding: 16px;
+        }
+        .pet_list {
+            display: flex;
+            flex-direction: row;
+
+            overflow-x: scroll;
+            overflow-y: hidden;
+            width: 200vw;
+        }
+        .box_title {
+            font-weight: 700;
+            line-height: 17px;
+        }
+        .pet_detail {
+            background: #FFFFFF;
+            border: 1px solid #DFE3E8;
+            border-radius: 8px;
+
+            margin-top: 8px;
+            margin-right: 16px;
+
+            padding: 12px;
+        }
+        .pet_detail_box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            padding-top: 8px;
+            padding-bottom: 12px;
+        }
+        .pet_info {
+            flex: 1;
+            padding-left: 8px;
+
+            font-weight: 400;
+            font-size: 14px;
+            line-height: 17px;
+
+            overflow: hidden;
+        }
+        .pet_name {
+            color: #42494F;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .pet_breed_name {
+            color: #8C949C;
+            display: block;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+        }
+        .pet_regtext {
+            color: #8C949C;
+            font-weight: 600;
+            font-size: 12px;
+            line-height: 14px;
+
+            background: #F4F7FA;
+            border-radius: 12px;
+
+            padding: 4px 8px;
+        }
+        .pet_reg_button {
+            background: #1482FF;
+            border-radius: 6px;
+
+            font-weight: 700;
+            font-size: 12px;
+            line-height: 14px;
+            color: #FFFFFF;
+
+            padding: 8px 71px;
+        }
+        .pet_no_detail_box {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+
+            font-weight: 400;
+            line-height: 17px;
+
+            color: #8C949C;
+        }
+        .registration_banner {
+            display: flex;
+            background: #DFEEFF;
+            border-radius: 8px;
+            align-items: center;
+
+            padding: 14px 12px;
+            margin-top: 16px;
+
+            font-weight: 700;
+        }
+        .registration_banner img {
+            position: absolute;
+            right: 0;
+            padding: 10px 28px;
+        }
+        .registration_banner .blue {
+            color: #1482FF;
+        }
+        .shopping_list {
+            display: flex;
+        }
+        .box_shop {
+            display: flex;
+            width: 25vw;
+            height: 74px;
+            flex-direction: column;
+            align-items: center;
+            justify-content: space-evenly;
+        }
+        .box_shop .count {
+            font-weight: 700;
+            color: #1482FF;
+        }
+        .folding_area {
+            display: flex;
+            padding: 16px;
+            border-bottom: 1px solid #E9ECEF;
+            align-items: center;
+            flex-direction: row;
+        }
+        .folding_area img {
+            position: absolute;
+            right: 0;
+            transform: rotate(90deg);
+            padding: 17px 16px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrapper">
+        <div class="header">
+            마이페이지
+            <img src="./image/config.svg" alt="" width="20" height="20">
+        </div>
+        <div class="content">
+            <div class="my_info">
+                <div class="my_info1">
+                    <div class="my_info1_name">핏펫회원 님</div>
+                    <div class="my_info1_image">
+                        <img class="sns_image" src="./image/icn-naver.svg" alt="" width="24" height=24">
+                        <span>아이디(이메일) 정보 없음</span>
+                    </div>
+                </div>
+                <div class="my_info2">
+                    <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
+                </div>
+            </div>
+            <div class="term"></div>
+            <div class="list_box">
+                <span class="box_title">반려동물 1</span>
+                <div class="pet_list">
+                    <div class="pet_detail">
+                        <span class="pet_regtext">
+                            동물 미등록
+                        </span>
+                        <div class="pet_detail_box">
+                            <img class="pet_image" src="./image/dog1.svg" alt="" width="42" height="42">
+                            <div class="pet_info">
+                                <div class="pet_name">멍멍이</div>
+                                <div class="pet_breed_name">웨스트 하이랜드 화이트테리어</div>
+                            </div>
+                            <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
+                        </div>
+                        <div class="pet_reg_button">
+                            동물등록 신청하기
+                        </div>
+                    </div>
+                    <div class="pet_detail">
+                        <div class="pet_no_detail_box">
+                            <img class="pet_image" src="./image/round_plus.svg" alt="" width="42" height="42">
+                            <span>반려동물 추가하기</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="registration_banner">
+                    3분이면 국가&nbsp;<span class="blue">동물등록 신청</span>이 가능해요!
+                    <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
+                </div>
+            </div>
+            <div class="term"></div>
+            <div class="list_box">
+                <span class="box_title">MY쇼핑 1</span>
+                <div class="shopping_list">
+                    <div class="box_shop">
+                        <span class="count">3</span>
+                        주문.배송
+                    </div>
+                    <div class="box_shop">
+                        <span class="count">6</span>
+                        리뷰
+                    </div>
+                    <div class="box_shop">
+                        <span class="count">1</span>
+                        쿠폰
+                    </div>
+                    <div class="box_shop">
+                        <span class="count">14,678</span>
+                        적립금
+                    </div>
+                </div>
+            </div>
+            <div class="term"></div>
+            <div class="folding_area">
+                <span class="box_title">핏펫몰</span>
+                <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
+            </div>
+            <div class="folding_area">
+                <span class="box_title">병원찾기</span>
+                <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
+            </div>
+        </div>
+        <div class="footer">
+        </div>
+    </div>
+    <script>
+        /**
+         * 
+        */
+        !(function(){
+            console.log('document')
+        })()
+    </script>
+</body>
+</html>
