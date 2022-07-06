@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
     <style>
         html,body {
             width: 100%;
@@ -76,13 +77,11 @@
         .list_box {
             padding: 16px;
         }
-        .pet_list {
+        .pet_inner_list {
             display: flex;
             flex-direction: row;
-
-            overflow-x: scroll;
-            overflow-y: hidden;
-            width: 200vw;
+            flex-wrap: nowrap;
+            overflow-x: auto;
         }
         .box_title {
             font-weight: 700;
@@ -97,6 +96,8 @@
             margin-right: 16px;
 
             padding: 12px;
+
+            flex: 0 0 auto;
         }
         .pet_detail_box {
             display: flex;
@@ -161,6 +162,10 @@
             line-height: 17px;
 
             color: #8C949C;
+            height: 100%;
+        }
+        .pet_no_detail_box span {
+            padding-left: 10px;
         }
         .registration_banner {
             display: flex;
@@ -196,20 +201,47 @@
             font-weight: 700;
             color: #1482FF;
         }
+        ul {
+            list-style: none;
+        }
         .folding_area {
             display: flex;
-            padding: 16px;
-            border-bottom: 1px solid #E9ECEF;
-            align-items: center;
-            flex-direction: row;
+            flex-direction: column;
         }
         .folding_area img {
             position: absolute;
             right: 0;
+            padding: 16px;
             transform: rotate(90deg);
-            padding: 17px 16px;
+        }
+        .folding_area .title {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 16px;
+
+            font-weight: 700;
+            font-size: 14px;
+            line-height: 17px;
+
+            border-bottom: 1px solid #E9ECEF;
+        }
+        .folding_area .box_area {
+            width: 100%;
+            padding: 16px;
+            border-bottom: 1px solid #E9ECEF;
+        }
+        .box_areas {
+            display: none;
         }
     </style>
+    <script>
+        $(document).ready(function() {
+            $(".title").on('click', function () {
+                $(this).next(".box_areas").slideToggle(100);
+            });
+        });
+    </script>
     <title>Document</title>
 </head>
 <body>
@@ -234,7 +266,7 @@
             <div class="term"></div>
             <div class="list_box">
                 <span class="box_title">반려동물 1</span>
-                <div class="pet_list">
+                <div class="pet_inner_list">
                     <div class="pet_detail">
                         <span class="pet_regtext">
                             동물 미등록
@@ -254,7 +286,7 @@
                     <div class="pet_detail">
                         <div class="pet_no_detail_box">
                             <img class="pet_image" src="./image/round_plus.svg" alt="" width="42" height="42">
-                            <span>반려동물 추가하기</span>
+                            <span>반려동물을 등록해 주세요!</span>
                         </div>
                     </div>
                 </div>
@@ -265,7 +297,7 @@
             </div>
             <div class="term"></div>
             <div class="list_box">
-                <span class="box_title">MY쇼핑 1</span>
+                <span class="box_title">MY쇼핑</span>
                 <div class="shopping_list">
                     <div class="box_shop">
                         <span class="count">3</span>
@@ -287,24 +319,35 @@
             </div>
             <div class="term"></div>
             <div class="folding_area">
-                <span class="box_title">핏펫몰</span>
-                <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
-            </div>
-            <div class="folding_area">
-                <span class="box_title">병원찾기</span>
-                <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
+                <ul class="list">
+                    <li>
+                        <div class="title">
+                            핏펫몰
+                            <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
+                        </div>
+                        <div class="box_areas">
+                            <div class="box_area">주문/배송 내역</div>
+                            <div class="box_area">취소/반품/교환 내역</div>
+                            <div class="box_area">최근 본 상품</div>
+                            <div class="box_area">찜한 상품 0</div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="title">
+                            병원찾기
+                            <img class="right_image" src="./image/arr_right_24px.svg" alt="" width="24" height=24">
+                        </div>
+                        <div class="box_areas">
+                            <div class="box_area">예약 내역</div>
+                            <div class="box_area">리뷰 관리</div>
+                            <div class="box_area">진료 수첩</div>
+                        </div>
+                    </li>
+                </ul>
             </div>
         </div>
         <div class="footer">
         </div>
     </div>
-    <script>
-        /**
-         * 
-        */
-        !(function(){
-            console.log('document')
-        })()
-    </script>
 </body>
 </html>
